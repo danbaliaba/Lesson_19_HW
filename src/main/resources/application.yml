@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: supplier
+  mail:
+    username: d83935353@gmail.com
+    password: dpvqxhnrwzyquhig
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            protocols: TLSv1.2
+            trust: smtp.gmail.com
+server:
+  port: 8081
