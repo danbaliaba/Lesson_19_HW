@@ -53,16 +53,8 @@ public class SupplyRequestServiceImpl implements SupplyRequestService {
         try {
             Template template = mailConfig.getTemplate("supply_request.ftlh");
             Map<String, Object> templateMap = new HashMap<>();
-            List<Map<String, Object>> supplyList = new ArrayList<>();
 
-            for(Map.Entry<String, Integer> entry : supplyRequest.entrySet()){
-                Map<String, Object> product = new HashMap<>();
-                product.put("title", entry.getKey());
-                product.put("quantity", entry.getValue());
-                supplyList.add(product);
-            }
-
-            templateMap.put("supplyList", supplyList);
+            templateMap.put("supplyRequest", supplyRequest);
 
             return FreeMarkerTemplateUtils.processTemplateIntoString(template, templateMap);
 

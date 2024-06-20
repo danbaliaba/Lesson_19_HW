@@ -21,11 +21,11 @@
         <td>Количество</td>
     </tr>
 
-    <#list supplyList as product>
-            <tr>
-                <td>${product.title}</td>
-                <td>${product.quantity}</td>
-            </tr>
+    <#list supplyRequest?keys as key>
+        <tr>
+            <td>${key}</td>
+            <td>${supplyRequest[key]}</td>
+        </tr>
     </#list>
 
 </table>
